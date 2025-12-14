@@ -95,52 +95,52 @@ export default function FeaturesSection() {
             </svg>
             <span className="text-sm font-medium text-primary">Built for Every Team</span>
           </div>
-          <h2 
-            id="features-heading"
+        <h2 
+          id="features-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary mb-4"
-          >
+        >
             Powerful Features
-          </h2>
+        </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Everything you need to ensure your website meets accessibility standards and stays compliant.
-          </p>
+          Everything you need to ensure your website meets accessibility standards and stays compliant.
+        </p>
         </motion.div>
 
         {/* MVP Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {mvpFeatures.map((feature, index) => (
             <motion.div
-              key={feature.title}
+            key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="group relative bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-            >
+          >
               {/* Gradient border glow on hover */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
               
               {/* Soft glow on hover */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-5 blur-xl transition-opacity duration-300`}></div>
-              
+            
               {/* Icon bubble with gradient - Uniform size */}
-              <div className="relative z-10 mb-4">
+            <div className="relative z-10 mb-4">
                 <div className={`inline-flex p-3.5 w-14 h-14 items-center justify-center rounded-xl bg-gradient-to-br ${feature.gradient} bg-opacity-10 group-hover:bg-opacity-20 group-hover:brightness-110 transition-all duration-300 border border-transparent group-hover:border-primary/20`}>
                   <div className="text-primary group-hover:text-primary-600 transition-colors duration-300">
-                    {feature.icon}
-                  </div>
+                  {feature.icon}
                 </div>
               </div>
+            </div>
 
-              {/* Content */}
-              <div className="relative z-10">
-                <h3 className="text-lg font-bold text-text-primary mb-2 group-hover:text-primary transition-colors duration-300">
-                  {feature.title}
-                </h3>
+            {/* Content */}
+            <div className="relative z-10">
+              <h3 className="text-lg font-bold text-text-primary mb-2 group-hover:text-primary transition-colors duration-300">
+                {feature.title}
+              </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+                {feature.description}
+              </p>
+            </div>
 
               {/* Hover border effect */}
               <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-primary/20 transition-all duration-300"></div>

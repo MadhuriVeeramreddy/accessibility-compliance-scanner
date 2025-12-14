@@ -85,60 +85,60 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {/* Product */}
-            <div>
-              <h3 className="text-sm font-semibold text-text-primary mb-4">Product</h3>
+          {/* Product */}
+          <div>
+            <h3 className="text-sm font-semibold text-text-primary mb-4">Product</h3>
               <ul className="space-y-3">
-                <li>
+              <li>
                   <a href="#features" className="text-sm text-gray-700 hover:text-primary font-medium transition-colors">
-                    Features
+                  Features
                   </a>
-                </li>
-                <li>
+              </li>
+              <li>
                   <a href="#how-it-works" className="text-sm text-gray-700 hover:text-primary font-medium transition-colors">
-                    How It Works
+                  How It Works
                   </a>
-                </li>
-                <li>
+              </li>
+              <li>
                   <a href="#why-different" className="text-sm text-gray-700 hover:text-primary font-medium transition-colors">
                     Why We&apos;re Different
                   </a>
-                </li>
-              </ul>
-            </div>
+              </li>
+            </ul>
+          </div>
 
-            {/* Resources */}
-            <div>
-              <h3 className="text-sm font-semibold text-text-primary mb-4">Resources</h3>
+          {/* Resources */}
+          <div>
+            <h3 className="text-sm font-semibold text-text-primary mb-4">Resources</h3>
               <ul className="space-y-3">
-                <li>
+              <li>
                   <a href="#faq" className="text-sm text-gray-700 hover:text-primary font-medium transition-colors">
-                    FAQ
+                  FAQ
                   </a>
-                </li>
-                <li>
+              </li>
+              <li>
                   <a href="/sample-report.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-700 hover:text-primary font-medium transition-colors">
                     Sample Report
                   </a>
-                </li>
-              </ul>
-            </div>
+              </li>
+            </ul>
+          </div>
 
-            {/* Legal */}
-            <div>
-              <h3 className="text-sm font-semibold text-text-primary mb-4">Legal</h3>
+          {/* Legal */}
+          <div>
+            <h3 className="text-sm font-semibold text-text-primary mb-4">Legal</h3>
               <ul className="space-y-3">
-                <li>
+              <li>
                   <Link href="/privacy" className="text-sm text-gray-700 hover:text-primary font-medium transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
                   <Link href="/terms" className="text-sm text-gray-700 hover:text-primary font-medium transition-colors">
-                    Terms of Service
-                  </Link>
-                </li>
-              </ul>
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function Footer() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
             <span>© {currentYear} DesiA11y. All rights reserved.</span>
-          </div>
+            </div>
           <div className="flex items-center gap-2 text-sm text-gray-600">
             <span>Made with</span>
             <span className="text-red-500">❤️</span>

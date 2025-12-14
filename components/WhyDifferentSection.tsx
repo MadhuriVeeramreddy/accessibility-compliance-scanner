@@ -50,25 +50,25 @@ export default function WhyDifferentSection() {
             </svg>
             <span className="text-sm font-medium text-primary">Built With Industry-Leading Accessibility Engines</span>
           </div>
-          <h2 
-            id="why-different-heading"
+        <h2 
+          id="why-different-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary mb-4"
-          >
+        >
             Why We&apos;re Different (for India)
-          </h2>
+        </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Built specifically for Indian teams with local compliance context and actionable fixes.
-          </p>
+        </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {differentiators.map((item, index) => (
-            <motion.div
-              key={item.title}
+        {differentiators.map((item, index) => (
+          <motion.div
+            key={item.title}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative bg-white p-6 rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-300"
             >
               {/* Icon */}
@@ -86,11 +86,11 @@ export default function WhyDifferentSection() {
                   {item.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  {item.description}
-                </p>
+              {item.description}
+            </p>
               </div>
-            </motion.div>
-          ))}
+          </motion.div>
+        ))}
         </div>
       </div>
     </section>

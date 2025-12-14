@@ -62,21 +62,21 @@ export default function WhySection() {
             </svg>
             <span className="text-sm font-medium text-primary">Why Compliance Matters</span>
           </div>
-          <h2 
-            id="why-heading"
+        <h2 
+          id="why-heading"
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary mb-4"
-          >
-            Why ADA/WCAG Compliance Matters
-          </h2>
+        >
+          Why ADA/WCAG Compliance Matters
+        </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Maximize your website&apos;s accessibility and compliance while maintaining excellent user experience for all visitors.
-          </p>
+        </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {benefits.map((benefit, index) => (
             <motion.div
-              key={benefit.title}
+            key={benefit.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -87,7 +87,7 @@ export default function WhySection() {
               <div className="mb-4">
                 <div className="inline-flex p-3 rounded-lg bg-gray-50">
                   <div className="text-gray-700">
-                    {benefit.icon}
+                {benefit.icon}
                   </div>
                 </div>
               </div>
@@ -98,12 +98,12 @@ export default function WhySection() {
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  {benefit.description}
-                </p>
-              </div>
+                {benefit.description}
+              </p>
+            </div>
             </motion.div>
           ))}
-        </div>
+          </div>
       </div>
     </section>
   );

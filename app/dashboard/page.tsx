@@ -6,7 +6,7 @@ import SummaryCard from "@/components/dashboard/SummaryCard";
 import ScanTable from "@/components/dashboard/ScanTable";
 import { getScan } from "@/lib/api";
 
-type ScanStatus = "completed" | "running" | "failed" | "queued" | "processing";
+type ScanStatus = "completed" | "processing" | "failed" | "queued";
 
 interface Scan {
   id: string;
@@ -29,7 +29,7 @@ const mockScans: Scan[] = [
     id: "2",
     websiteUrl: "https://www.example.com",
     dateSubmitted: "2025-12-03T10:01:59.790Z",
-    status: "running",
+    status: "processing",
     score: null,
   },
   {

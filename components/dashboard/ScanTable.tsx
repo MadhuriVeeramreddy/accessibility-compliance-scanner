@@ -6,7 +6,7 @@ interface Scan {
   id: string;
   websiteUrl: string;
   dateSubmitted: string;
-  status: "queued" | "running" | "completed" | "failed";
+  status: "queued" | "processing" | "completed" | "failed";
   score: number | null;
 }
 
@@ -17,7 +17,7 @@ interface ScanTableProps {
 
 const statusColors = {
   queued: "bg-blue-100 text-blue-700",
-  running: "bg-amber-100 text-amber-700",
+  processing: "bg-amber-100 text-amber-700",
   completed: "bg-green-100 text-green-700",
   failed: "bg-red-100 text-red-700",
 };
