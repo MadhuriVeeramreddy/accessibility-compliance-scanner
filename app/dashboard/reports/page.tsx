@@ -2,27 +2,28 @@
 
 import Navbar from "@/components/dashboard/Navbar";
 import ScanTable from "@/components/dashboard/ScanTable";
+import { DashboardScan } from "@/types/dashboard";
 
-const mockScans = [
+const mockScans: DashboardScan[] = [
   {
     id: "1",
     websiteUrl: "https://www.barrierbreak.com",
     dateSubmitted: "2025-12-04T09:46:18.135Z",
-    status: "completed" as const,
+    status: "completed",
     score: 97,
   },
   {
     id: "2",
     websiteUrl: "https://www.example.com",
     dateSubmitted: "2025-12-03T10:01:59.790Z",
-    status: "completed" as const,
+    status: "completed",
     score: 85,
   },
   {
     id: "3",
     websiteUrl: "https://www.test.com",
     dateSubmitted: "2025-12-02T08:30:00.000Z",
-    status: "completed" as const,
+    status: "completed",
     score: 92,
   },
 ];

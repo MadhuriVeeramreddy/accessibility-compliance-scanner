@@ -5,19 +5,10 @@ import Navbar from "@/components/dashboard/Navbar";
 import SummaryCard from "@/components/dashboard/SummaryCard";
 import ScanTable from "@/components/dashboard/ScanTable";
 import { getScan } from "@/lib/api";
-
-type ScanStatus = "completed" | "processing" | "failed" | "queued";
-
-interface Scan {
-  id: string;
-  websiteUrl: string;
-  dateSubmitted: string;
-  status: ScanStatus;
-  score: number | null;
-}
+import { DashboardScan } from "@/types/dashboard";
 
 // Mock data - replace with actual API calls
-const mockScans: Scan[] = [
+const mockScans: DashboardScan[] = [
   {
     id: "1",
     websiteUrl: "https://www.barrierbreak.com",
@@ -43,7 +34,7 @@ const mockScans: Scan[] = [
 
 export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
-  const [scans, setScans] = useState<Scan[]>(mockScans);
+  const [scans, setScans] = useState<DashboardScan[]>(mockScans);
 
   useEffect(() => {
     // Simulate loading

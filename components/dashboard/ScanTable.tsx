@@ -1,17 +1,10 @@
 "use client";
 
 import Link from "next/link";
-
-interface Scan {
-  id: string;
-  websiteUrl: string;
-  dateSubmitted: string;
-  status: "queued" | "processing" | "completed" | "failed";
-  score: number | null;
-}
+import { DashboardScan } from "@/types/dashboard";
 
 interface ScanTableProps {
-  scans: Scan[];
+  scans: DashboardScan[];
   loading?: boolean;
 }
 
