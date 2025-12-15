@@ -8,13 +8,34 @@ import IssueAccordion from "@/components/dashboard/IssueAccordion";
 import ProgressBar from "@/components/dashboard/ProgressBar";
 import { getScan } from "@/lib/api";
 
+type Severity = "critical" | "serious" | "moderate" | "minor";
+
+interface ReportIssue {
+  id: string;
+  ruleId: string;
+  description: string;
+  selector: string;
+  severity: Severity;
+  suggestion?: string;
+}
+
+interface Report {
+  id: string;
+  websiteUrl: string;
+  websiteName: string;
+  scanDate: string;
+  status: "queued" | "processing" | "completed" | "failed";
+  score: number;
+  issues: ReportIssue[];
+}
+
 // Mock data - replace with actual API call
-const mockReport = {
+const mockReport: Report = {
   id: "1",
   websiteUrl: "https://www.barrierbreak.com",
   websiteName: "Barrier Break",
   scanDate: "2025-12-04T09:46:18.135Z",
-  status: "completed" as const,
+  status: "completed",
   score: 97,
   issues: [
     {
@@ -22,7 +43,7 @@ const mockReport = {
       ruleId: "link-in-text-block",
       description: "Ensure links are distinguished from surrounding text in a way that does not rely on color",
       selector: "a",
-      severity: "serious" as const,
+      severity: "serious",
       suggestion: "Add underline or other visual indicator to links",
     },
     {
@@ -30,7 +51,7 @@ const mockReport = {
       ruleId: "meta-refresh",
       description: "Ensure <meta http-equiv=\"refresh\"> is not used for delayed refresh",
       selector: "meta [http-equiv=\"refresh\"]",
-      severity: "critical" as const,
+      severity: "critical",
       suggestion: "Remove the meta refresh tag or use a redirect with proper HTTP status code",
     },
   ],
@@ -39,7 +60,7 @@ const mockReport = {
 export default function ReportPage() {
   const params = useParams();
   const [loading, setLoading] = useState(true);
-  const [report, setReport] = useState(mockReport);
+  const [report, setReport] = useState<Report>(mockReport);
 
   useEffect(() => {
     // Simulate API call
@@ -51,6 +72,22 @@ export default function ReportPage() {
     serious: report.issues.filter((i) => i.severity === "serious").length,
     moderate: report.issues.filter((i) => i.severity === "moderate").length,
     minor: report.issues.filter((i) => i.severity === "minor").length,
+  };
+
+  // Map report status to ProgressBar status
+  const getProgressBarStatus = (status: Report["status"]): "queued" | "running" | "analyzing" | "generating" | "completed" => {
+    switch (status) {
+      case "queued":
+        return "queued";
+      case "processing":
+        return "running";
+      case "completed":
+        return "completed";
+      case "failed":
+        return "completed"; // Show as completed even if failed
+      default:
+        return "queued";
+    }
   };
 
   const handleDownloadPDF = () => {
@@ -91,7 +128,7 @@ export default function ReportPage() {
             {report.status !== "completed" && (
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
                 <h2 className="text-lg font-semibold text-slate-900 mb-4">Scan Progress</h2>
-                <ProgressBar status={report.status} />
+                <ProgressBar status={getProgressBarStatus(report.status)} />
               </div>
             )}
 
